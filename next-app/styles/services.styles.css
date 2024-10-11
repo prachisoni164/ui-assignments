@@ -1,0 +1,32 @@
+.container {
+  max-width: 1200px; 
+  margin: auto;
+  text-align: left;
+}
+
+.serviceList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+}
+
+.serviceItem {
+  flex: 1; 
+  min-width: 250px; 
+  max-width: 300px; 
+  height: 250px; 
+  margin: 10px; 
+  background-color: #fff; 
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transition: box-shadow 0.3s; 
+}
+
+.serviceItem:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+}
+
