@@ -6,9 +6,7 @@ import { PostProvider } from '../../../../context/post-context'
 
 const Posts = () => {
   return (
-    <PostProvider>
-      <PostsPage />
-    </PostProvider>
+    <PostsPage />
   )
 }
 

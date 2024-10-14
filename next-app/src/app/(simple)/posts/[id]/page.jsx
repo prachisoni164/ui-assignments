@@ -1,15 +1,14 @@
 "use client"
 
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
+import PostById from '../../../../../views/post-by-id';
+
 const Post = () => {
+    
     const { id } = useParams(); // Access the dynamic route parameter
-
-
+    
     return (
-        <div>
-            <h1>Post</h1>
-            <p>Post ID: {id}</p>
-        </div>
+        <PostById id={id} />
     );
 };
 
