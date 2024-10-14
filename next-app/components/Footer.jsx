@@ -9,6 +9,7 @@ const FooterBar = () => {
             <p>all rights reserved.</p>
             <ul className="footer-links mt-4">
                 <li><Link href="/services">services</Link></li>
+                <li><Link href="/services">posts</Link></li>
                 <li><Link href="/about">about</Link></li>
                 <li><Link href="/contact">contact</Link></li>
             </ul>
