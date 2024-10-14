@@ -4,7 +4,7 @@
     margin: 0 auto; 
   }
 
-  .contactContainer h1 {
+  .contactContainer h1, .contactContainer p {
     margin: 40px auto; 
     text-align: center; 
   }
