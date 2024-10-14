@@ -19,6 +19,7 @@ body {
   color: var(--background);
   background: #fcfcfc;
   font-family: 'Roboto', sans-serif; 
+  text-transform: lowercase;
 }
 
 @layer utilities {
