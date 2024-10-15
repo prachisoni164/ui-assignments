@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutPage from '../../pages/about/page'
+import AboutPage from '../../pages/about/about-page'
 
 
 const About = () => {

@@ -32,3 +32,9 @@ nav h1 {
   padding: 0.5rem 1rem;
   transition: color 0.3s; 
 }
+
+.active {
+  color: #e8e8e8;
+  font-weight: bold;
+  border-bottom: 2px solid #e8e8e8;
+}

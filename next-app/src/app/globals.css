@@ -19,10 +19,24 @@ body {
   color: var(--background);
   background: #fcfcfc;
   font-family: 'Roboto', sans-serif; 
+  text-transform: lowercase;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-left {
+  text-align: left;
+}
+
+
+.pointer {
+  cursor: pointer;
 }

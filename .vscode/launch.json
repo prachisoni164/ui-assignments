@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}/next-app",
+            "resolveSourceMapLocations": [
+                "${workspaceFolder}/next-app/**",
+                "!/node_modules/**"
+            ],
+            "sourceMaps": true,
+            "sourceMapPathOverrides": {
+                "webpack://_N_E/*": "${workspaceFolder}/next-app/*",
+                "webpack://src/*": "${workspaceFolder}/next-app/src/*"
+            },
+            "skipFiles": [
+                "<node_internals>/**",
+                "${workspaceFolder}/next-app/node_modules/**"
+            ],
+            "trace": true
+        }
+    ]
+}
