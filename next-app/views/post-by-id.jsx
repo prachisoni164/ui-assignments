@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import React, { useContext } from "react"
 import { PostContext } from "../context/post-context"
 
 const PostById = (id) => {
@@ -22,7 +22,8 @@ const PostById = (id) => {
                     <p>Post not found.</p>
                 )}
             </div>
-    </div>
-)};
+        </div>
+    );
+};
 
-export default PostById
+export default PostById;

@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import '../styles/services.styles.css'
 import { ServiceContext } from '../context/service-context'
 import Link from "next/link";

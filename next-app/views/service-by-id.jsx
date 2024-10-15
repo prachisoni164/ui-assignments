@@ -1,6 +1,6 @@
 import { useContext } from "react"
-import { PostContext } from "../context/post-context"
 import { ServiceContext } from "../context/service-context";
+import React from 'react';
 
 const ServiceById = (id) => {
 

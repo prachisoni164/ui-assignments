@@ -28,7 +28,7 @@ const Contact = () => {
         }));
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = () => {
         setSubmitted(true);
 
     }
@@ -37,7 +37,7 @@ const Contact = () => {
         <div className="contactContainer">
             <h1>contact us</h1>
             
-            {submitted ? (<p>Thank you for reaching out, {form.name}! We'll get back to you soon</p>
+            {submitted ? (<p>Thank you for reaching out, {form.name}! We&apos;ll get back to you soon</p>
             ) : (
                 <form className="contactForm" onSubmit={handleSubmit}>
                     <div className="formGroup">

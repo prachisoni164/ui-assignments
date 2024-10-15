@@ -1,5 +1,5 @@
-import { useContext } from "react"
-import { PostProvider, PostContext } from "../context/post-context"
+import React, { useContext } from "react"
+import { PostContext } from "../context/post-context"
 import Link from "next/link";
 
 const Posts = () => {

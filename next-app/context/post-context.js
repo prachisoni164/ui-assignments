@@ -1,11 +1,12 @@
-import { createContext, useState } from "react";
+import React, { createContext, useState } from "react";
+import PropTypes from 'prop-types';
 
 // Context for posts
 export const PostContext = createContext();
 
 // Provider for posts
-export const PostProvider = ({children}) => {
-    const[posts] = useState([
+export const PostProvider = ({ children }) => {
+    const [posts] = useState([
         { 
             id: 1, 
             title: 'Understanding JavaScript Closures', 
@@ -28,3 +29,7 @@ export const PostProvider = ({children}) => {
         </PostContext.Provider>
     )
 }
+
+PostProvider.propTypes = {
+    children: PropTypes.node.isRequired
+};
