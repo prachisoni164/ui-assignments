@@ -8,7 +8,7 @@ export default function SimpleLayout({ children }) {
     return (
         <>
             <Header />
-            <div>{children}</div>
+            {children}
             <Footer />
         </>
     )
