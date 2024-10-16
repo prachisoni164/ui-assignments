@@ -36,7 +36,14 @@ body {
   text-align: left;
 }
 
+.text-center {
+  text-align: center;
+}
 
 .pointer {
   cursor: pointer;
+}
+
+.flex {
+  display: flex;
 }
