@@ -1,12 +1,18 @@
 import React from 'react'
 import Image from 'next/image';
 import styles from "./product-card.module.css"
+import { useRouter } from 'next/navigation';
 
 const ProductCard = (product) => {
+    const router = useRouter();
+
+    const handleCardClick = () => {
+      router.push(`/products/${product.product.id}`);
+    };
 
     return (
         <>
-            <div className={styles.productCard}>
+            <div className={styles.productCard} onClick={handleCardClick}>
                 <Image
                     src={product.product.thumbnail}
                     alt={product.product.name}

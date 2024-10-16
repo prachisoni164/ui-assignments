@@ -11,7 +11,7 @@ const PostById = (id) => {
 
 
     return (
-        <div className="container">
+        <div className="full-container">
             <div>
                 {post ? (
                     <>

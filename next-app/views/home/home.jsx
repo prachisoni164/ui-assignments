@@ -20,7 +20,7 @@ const Home = () => {
   }, []); // Run only once when the component mounts
 
   return (
-    <div className="container">
+    <div className="full-container">
         <h1>{greeting}</h1>
         <h1>welcome to next-app</h1>
         <p>your one-stop solution for all your needs</p>

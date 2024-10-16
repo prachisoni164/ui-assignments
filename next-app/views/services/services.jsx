@@ -8,7 +8,7 @@ const Services = () => {
     const services = useContext(ServiceContext) // Access the services data from context
 
     return (
-        <div className="container">
+        <div className="full-container">
             <h1>our services</h1>
             <ul className="cardList">
                 {services.map(service => (

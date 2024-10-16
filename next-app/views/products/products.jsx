@@ -12,12 +12,12 @@ const Products = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchProducts(); 
+    fetchProducts();
   },[]);
 
   const fetchProducts = async () => {
     try {
-      const response = await get(`${PRODUCT_ROUTES.GET_ALL_PRODUCTS}?limit=10&skip=0`)
+      const response = await get(`${PRODUCT_ROUTES.GET_ALL_PRODUCTS}?limit=12&skip=0`)
       setProducts(response.data.products);
     }
     catch (err) {
@@ -28,11 +28,11 @@ const Products = () => {
     }
   }
 
-  if (loading) return <div className="container"><p className='text-center'>Loading...</p></div>; // Show loading state
-  if (error) return <div>{error}</div>; // Show error message
+  if (loading) return <div className="full-container"><p className='text-center'>Loading...</p></div>; // Show loading state
+  if (error) return <div className='full-container'>{error}</div>; // Show error message
 
   return (
-    <div className="container">
+    <div className="full-container">
       <h1 className='mt-5'>our products</h1>
       <div className='flex flex-wrap gap-2 justify-center'>
         {products.map((product) => {
@@ -41,7 +41,6 @@ const Products = () => {
           )
         })}
       </div>
-    
   </div>
 )};
 
