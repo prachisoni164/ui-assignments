@@ -19,7 +19,7 @@ const ProductById = (id) => {
             setProduct(response.data);
         } 
         catch (err) {
-            setError('Failed to fetch product'); // Handle any error that occurs
+            setError(err.response.data.message); // Handle any error that occurs
         } 
         finally {
             setLoading(false); // Set loading to false after fetching is complete
