@@ -12,6 +12,9 @@ const FooterBar = () => {
         <div className="footer-content">
             <p>all rights reserved.</p>
             <ul className="footer-links mt-4">
+              <li className={`nav-item ${pathname.includes('/products') ? 'active' : ''}`}>
+                <Link href="/products">products</Link>
+              </li>
               <li className={`nav-item ${pathname.includes('/services') ? 'active' : ''}`}>
                 <Link href="/services">services</Link>
               </li>
