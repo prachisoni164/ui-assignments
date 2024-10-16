@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { PostContext } from "../context/post-context"
+import { PostContext } from "../../context/post-context"
 import Link from "next/link";
 
 const Posts = () => {

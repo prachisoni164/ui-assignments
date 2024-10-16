@@ -1,5 +1,6 @@
 import React from 'react'
-import Posts from '../../../../views/posts'
+import Posts from '../../../../views/posts/posts'
+
 
 const PostsPage = () => {
   return (

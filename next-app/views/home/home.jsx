@@ -1,9 +1,9 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import '../styles/home.styles.css'
+import '../../styles/home.styles.css'
 import Link from 'next/link'
-import Button from '../components/Button'
+import Button from '../../components/Button'
 
 const Home = () => {
 

@@ -1,8 +1,9 @@
 "use client"
 
 import { useParams } from 'next/navigation';
-import PostById from '../../../../../views/post-by-id';
+
 import React from 'react';
+import PostById from '../../../../../views/posts/post-by-id';
 
 const Post = () => {
     
