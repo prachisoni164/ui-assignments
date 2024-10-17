@@ -5,13 +5,13 @@ import styles from "../../sections/products/product-card.module.css"
 import Image from 'next/image';
 import "../../src/app/globals.css"
 
-const ProductById = (id) => {
+const ProductById = ({id}) => {
  
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const productId = id.id; 
+    const productId = id; 
 
     const fetchProductById = async (id) => {
         try {
