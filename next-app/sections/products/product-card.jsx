@@ -15,7 +15,7 @@ const ProductCard = ({product}) => {
             <div className={styles.productCard} onClick={handleCardClick}>
                 <Image
                     src={product.thumbnail}
-                    alt={product.name}
+                    alt={product.name || 'Product Image'}
                     width={50}
                     height={50}
                     layout="responsive"

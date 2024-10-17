@@ -40,7 +40,7 @@ const ProductById = ({id}) => {
                     <div className={styles.productCard}>
                         <Image
                             src={product.thumbnail}
-                            alt={product.name}
+                            alt={product.name || 'Product Image'}
                             width={50}
                             height={50}
                             layout="responsive"
