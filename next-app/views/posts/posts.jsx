@@ -1,12 +1,12 @@
 import React, { useContext } from "react"
-import { PostContext } from "../context/post-context"
+import { PostContext } from "../../context/post-context"
 import Link from "next/link";
 
 const Posts = () => {
   const posts = useContext(PostContext); // Access the post data from context
 
   return (
-    <div className="container">
+    <div className="full-container">
       <h1>our posts</h1>
       <ul className="cardList">
           {posts.map(post => (

@@ -1,9 +1,9 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import '../styles/home.styles.css'
+import '../../styles/home.styles.css'
 import Link from 'next/link'
-import Button from '../components/Button'
+import Button from '../../components/Button'
 
 const Home = () => {
 
@@ -20,7 +20,7 @@ const Home = () => {
   }, []); // Run only once when the component mounts
 
   return (
-    <div className="container">
+    <div className="full-container">
         <h1>{greeting}</h1>
         <h1>welcome to next-app</h1>
         <p>your one-stop solution for all your needs</p>

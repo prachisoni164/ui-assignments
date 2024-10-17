@@ -1,7 +1,8 @@
 "use client"
 import React from 'react'
 import { useParams } from 'next/navigation';
-import ServiceById from '../../../../../views/service-by-id';
+import ServiceById from '../../../../../views/services/service-by-id';
+
 
 const Service = () => {
 

@@ -14,6 +14,9 @@ const NavBar = () => {
         <Link href="/">next-app</Link>
       </h1>
       <ul className="nav-list">
+        <li className={`nav-item ${pathname.includes('/products') ? 'active' : ''}`}>
+          <Link href="/products">products</Link>
+        </li>
         <li className={`nav-item ${pathname.includes('/services') ? 'active' : ''}`}>
           <Link href="/services">services</Link>
         </li>

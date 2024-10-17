@@ -1,5 +1,6 @@
 import React from 'react'
-import Contact from '../../../../views/contact'
+import Contact from '../../../../views/contact/contact'
+
 
 const ContactPage = () => {
   return (

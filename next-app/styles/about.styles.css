@@ -1,7 +1,8 @@
 .aboutContainer {
     padding: 20px;
-    max-width: 800px;
+    max-width: 600px;
     margin: 4rem auto; 
+    min-height: 64vh;
 }
 
 .aboutContainer h1 {

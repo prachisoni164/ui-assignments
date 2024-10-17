@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { PostContext } from "../context/post-context"
+import { PostContext } from "../../context/post-context"
 
 const PostById = (id) => {
     const posts = useContext(PostContext); // Access the post data from context
@@ -11,7 +11,7 @@ const PostById = (id) => {
 
 
     return (
-        <div className="container">
+        <div className="full-container">
             <div>
                 {post ? (
                     <>

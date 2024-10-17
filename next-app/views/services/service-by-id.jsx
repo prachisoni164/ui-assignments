@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { ServiceContext } from "../context/service-context";
+import { ServiceContext } from "../../context/service-context";
 import React from 'react';
 
 const ServiceById = (id) => {
@@ -11,7 +11,7 @@ const ServiceById = (id) => {
     const service = services.find((service) => service.id === parseInt(serviceId));
 
     return (
-        <div className="container">
+        <div className="full-container">
             <div>
                 {service ? (
                     <>
@@ -22,7 +22,7 @@ const ServiceById = (id) => {
                     <p>Service not found.</p>
                 )}
             </div>
-    </div>
+        </div>
 )};
 
 export default ServiceById

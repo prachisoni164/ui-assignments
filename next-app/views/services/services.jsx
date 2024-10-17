@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import '../styles/services.styles.css'
-import { ServiceContext } from '../context/service-context'
+import '../../styles/services.styles.css'
+import { ServiceContext } from '../../context/service-context'
 import Link from "next/link";
 
 const Services = () => {
@@ -8,7 +8,7 @@ const Services = () => {
     const services = useContext(ServiceContext) // Access the services data from context
 
     return (
-        <div className="container">
+        <div className="full-container">
             <h1>our services</h1>
             <ul className="cardList">
                 {services.map(service => (

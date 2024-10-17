@@ -1,8 +1,8 @@
 "use client"
 
 import React, { useState } from 'react'
-import '../styles/contact.styles.css'
-import Button from '../components/Button'
+import '../../styles/contact.styles.css'
+import Button from '../../components/Button'
 
 const Contact = () => {
     
