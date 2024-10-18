@@ -16,9 +16,8 @@ const ProductCard = ({product}) => {
                 <Image
                     src={product.thumbnail}
                     alt={product.name || 'Product Image'}
-                    width={50}
-                    height={50}
-                    layout="responsive"
+                    width={150}
+                    height={150}
                 />
                 <h2 className={styles.productTitle}>{product.title}</h2>
                 <p className={styles.productDescription}>{product.description}</p>
