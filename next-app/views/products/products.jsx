@@ -1,35 +1,45 @@
 "use client"
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ProductCard from "../../sections/products/product-card";
-import { get } from "../../src/app/HttpClient"
-import { PRODUCT_ROUTES } from '../../src/app/AppRoutes'
 import "../../src/app/globals.css"
+import { useQuery } from '@tanstack/react-query';
+import { fetchAllProducts } from '../../src/api/product-api';
+import { useRouter } from 'next/navigation';
+
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetchProducts();
-  },[]);
+  const limit = 8;
+  const router = useRouter();
 
-  const fetchProducts = async () => {
-    try {
-      const response = await get(`${PRODUCT_ROUTES.GET_ALL_PRODUCTS}?limit=12&skip=0`)
-      setProducts(response.data.products);
-    }
-    catch (err) {
-      setError('Failed to fetch products'); // Handle any error that occurs
-    } 
-    finally {
-      setLoading(false); // Set loading to false after fetching is complete
-    }
-  }
+  // Get the current page from the query parameter or default to 1
+  const pageFromQuery = new URLSearchParams(window.location.search).get('page');
+  const [page, setPage] = useState(pageFromQuery ? Number(pageFromQuery) : 1);
 
-  if (loading) return <div className="full-container"><p className='text-center'>Loading...</p></div>; // Show loading state
-  if (error) return <div className='full-container'>{error}</div>; // Show error message
+  // This can also be stored as hook for reusability (if applies)
+  const { data, isLoading, isError, error} = useQuery({
+    queryKey: ['products', page],                       // Unique identifier for the query; page is a dependency, when it changes, the query will be re-run
+    queryFn: () => fetchAllProducts(page - 1, limit),   // Function to fetch data
+    keepPreviousData: true,                             // Keeps the previous data while fetching new data
+    // There are other options like staleTime, cacheTime, and refetching mechanisms
+  })
+
+  const { products = [], total = 0 } = data || {};      // Default to empty array and 0
+
+  const totalPages = Math.ceil(total / limit);          // Calculate total pages
+
+  // Function to handle page changes
+  const handlePageChange = (newPage) => {
+    setPage(newPage);     
+    router.push(`/products?page=${newPage}`);           // Update the URL with the new page
+  };
+
+  // Handle loading state
+  if (isLoading) return <div className="full-container"><p className='text-center'>Loading...</p></div>; 
+  
+  // Handle error state
+  if (isError) return <div className='full-container'>{error}</div>; 
 
   return (
     <div className="full-container">
@@ -41,6 +51,19 @@ const Products = () => {
           )
         })}
       </div>
+      <ul className='pagination'>
+        {Array.from({ length: totalPages }, (_, index) => (
+          <li key={index}>
+            <button 
+              onClick={() => handlePageChange(index + 1)} 
+              className={index+1 === page ? 'active' : ''}
+              disabled={isLoading} // Disable page buttons while loading
+              >
+              {index + 1}
+            </button>
+          </li>
+        ))}
+      </ul>
   </div>
 )};
 

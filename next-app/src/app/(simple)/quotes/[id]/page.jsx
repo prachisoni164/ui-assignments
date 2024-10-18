@@ -36,13 +36,13 @@ const Quote = async ({ params }) => {
 
     if (isError) {
         return (
-            <div className='full-container'>Error fetching quote</div>
+            <div className='full-container'>error fetching quote</div>
         )
     }
 
     if (!quote) {
         return (
-            <div className='full-container'>Quote not found</div>
+            <div className='full-container'>quote not found</div>
         )
     }
 

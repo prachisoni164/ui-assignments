@@ -52,3 +52,20 @@ body {
   align-items: center;     
   min-height: 81vh;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 5px;
+}
+
+.pagination .active {
+  font-weight: bold;
+  background-color: #0070f3;
+  color: white;
+}
