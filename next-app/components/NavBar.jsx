@@ -17,6 +17,9 @@ const NavBar = () => {
         <li className={`nav-item ${pathname.includes('/products') ? 'active' : ''}`}>
           <Link href="/products">products</Link>
         </li>
+        <li className={`nav-item ${pathname.includes('/quotes') ? 'active' : ''}`}>
+          <Link href="/quotes">quotes</Link>
+        </li>
         <li className={`nav-item ${pathname.includes('/services') ? 'active' : ''}`}>
           <Link href="/services">services</Link>
         </li>
