@@ -43,8 +43,7 @@ const ProductById = ({ id }) => {
   if (error) {
     return (
       <Box className="full-container">
-        <Alert severity="error">{error}</Alert> // Use Material-UI Alert for
-        error messages
+        <Alert severity="error">{error}</Alert>
       </Box>
     );
   }
