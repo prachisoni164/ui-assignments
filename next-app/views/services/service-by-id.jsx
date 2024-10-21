@@ -1,28 +1,43 @@
-import { useContext } from "react"
+import { useContext } from "react";
 import { ServiceContext } from "../../context/service-context";
-import React from 'react';
+import React from "react";
+import { Typography, Box } from "@mui/material";
 
-const ServiceById = (id) => {
+const ServiceById = ({ id }) => {
+  const services = useContext(ServiceContext);
 
-    const services = useContext(ServiceContext);
+  const serviceId = id;
 
-    const serviceId = id.id;
+  const service = services.find(
+    (service) => service.id === parseInt(serviceId)
+  );
 
-    const service = services.find((service) => service.id === parseInt(serviceId));
+  return (
+    <Box
+      sx={{
+        padding: 2,
+        textAlign: "center",
+        height: "75vh",
+        width: "50%",
+        margin: "auto",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Typography variant="h4" component="h2" gutterBottom>
+        {service.title}
+      </Typography>
+      <Typography
+        variant="body1"
+        sx={{ fontStyle: "italic" }}
+        color="textSecondary"
+      >
+        {service.content}
+      </Typography>
+    </Box>
+  );
+};
 
-    return (
-        <div className="full-container">
-            <div>
-                {service ? (
-                    <>
-                        <h1>{service.title}</h1>
-                        <p>{service.content}</p>
-                    </>
-                ) : (
-                    <p>Service not found.</p>
-                )}
-            </div>
-        </div>
-)};
-
-export default ServiceById
+export default ServiceById;
