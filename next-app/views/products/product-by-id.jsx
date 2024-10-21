@@ -16,7 +16,7 @@ const ProductById = ({ id }) => {
       const response = await get(`${PRODUCT_ROUTES.GET_PRODUCT}${productId}`);
       setProduct(response.data);
     } catch (err) {
-      setError(err.response.data.message || "Failed to fetch product."); // Improved error message handling
+      setError(err.response.data.message || "Failed to fetch product.");
     } finally {
       setLoading(false);
     }
@@ -29,15 +29,14 @@ const ProductById = ({ id }) => {
   if (loading) {
     return (
       <Box
-        className="full-container"
         display="flex"
         justifyContent="center"
         alignItems="center"
-        height="100vh"
+        height="75vh"
       >
         <CircularProgress />
       </Box>
-    ); // Show loading spinner
+    );
   }
 
   if (error) {
@@ -59,7 +58,7 @@ const ProductById = ({ id }) => {
     <Box
       height={"75vh"}
       display="flex"
-      flexDirection="column"
+      flexDirection="row"
       alignItems="center"
       justifyContent="center"
       sx={{ padding: 2 }}
@@ -67,23 +66,36 @@ const ProductById = ({ id }) => {
       {product ? (
         <Box
           display="flex"
-          flexDirection="column"
+          flexDirection="row"
           alignItems="center"
-          textAlign="center"
+          justifyContent="space-between"
+          width="50%"
         >
-          <Image
-            src={product.thumbnail}
-            alt={product.name || "Product Image"}
-            width={150}
-            height={150}
-            style={{ objectFit: "cover" }} // Ensures the image fits well
-          />
-          <Typography variant="h5" sx={{ marginTop: 2 }}>
-            {product.title}
-          </Typography>
-          <Typography variant="body2" sx={{ marginTop: 1 }}>
-            {product.description}
-          </Typography>
+          {/* Left Section: Image */}
+          <Box>
+            <Image
+              src={product.thumbnail}
+              alt={product.name || "Product Image"}
+              width={200}
+              height={200}
+              style={{ objectFit: "cover" }}
+            />
+          </Box>
+
+          {/* Right Section: Text */}
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            sx={{ maxWidth: "400px" }}
+          >
+            <Typography variant="h5" sx={{ marginBottom: 2 }}>
+              {product.title}
+            </Typography>
+            <Typography variant="body2" sx={{ marginBottom: 2 }}>
+              {product.description}
+            </Typography>
+          </Box>
         </Box>
       ) : (
         <Typography variant="h6">Product not found.</Typography>
