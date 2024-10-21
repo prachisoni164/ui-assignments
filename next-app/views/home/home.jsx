@@ -28,9 +28,6 @@ const Home = () => {
         alignItems: "center",
       }}
     >
-      <Typography variant="h2" sx={{ my: 1 }}>
-        {greeting}
-      </Typography>
       <Typography variant="h4" sx={{ my: 1 }}>
         Welcome to Next-App
       </Typography>
