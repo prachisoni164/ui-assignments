@@ -1,34 +1,46 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import '../../styles/home.styles.css'
-import Link from 'next/link'
-import Button from '../../components/Button'
+import React, { useState, useEffect } from "react";
+import { Box, Typography, Button } from "@mui/material";
+import Link from "next/link";
 
 const Home = () => {
-
-  const [greeting, setGreeting] = useState(''); // Initialize state for greeting
+  const [greeting, setGreeting] = useState(""); // Initialize state for greeting
 
   useEffect(() => {
     const hour = new Date().getHours();
 
     // Set the greeting based on the time of day
-    if(hour < 12) setGreeting('good morning')
-    else if (hour < 18) setGreeting('good afternoon');
-    else setGreeting('good evening');
-    
+    if (hour < 12) setGreeting("Good morning");
+    else if (hour < 18) setGreeting("Good afternoon");
+    else setGreeting("Good evening");
   }, []); // Run only once when the component mounts
 
   return (
-    <div className="full-container">
-        <h1>{greeting}</h1>
-        <h1>welcome to next-app</h1>
-        <p>your one-stop solution for all your needs</p>
-        <Link href="/contact">
-            <Button>get started</Button>
-        </Link>
-    </div>
-  )
-}
+    <Box
+      sx={{
+        textAlign: "center",
+        p: 4,
+        height: "75vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Typography variant="h4" sx={{ my: 1 }}>
+        Welcome to Next-App
+      </Typography>
+      <Typography variant="body1" sx={{ mb: 2 }}>
+        Your one-stop solution for all your needs.
+      </Typography>
+      <Link href="/contact" passHref>
+        <Button variant="contained" color="primary">
+          Get Started
+        </Button>
+      </Link>
+    </Box>
+  );
+};
 
-export default Home
+export default Home;

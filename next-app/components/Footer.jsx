@@ -1,36 +1,62 @@
-import React from 'react'
-import '../styles/footer.styles.css'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation';
+import React from "react";
+import { Box, Typography } from "@mui/material";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const FooterBar = () => {
-
   const pathname = usePathname(); // Get current route
 
-  return (
-    <footer>
-        <div className="footer-content">
-            <p>all rights reserved.</p>
-            <ul className="footer-links mt-4">
-              <li className={`nav-item ${pathname.includes('/products') ? 'active' : ''}`}>
-                <Link href="/products">products</Link>
-              </li>
-              <li className={`nav-item ${pathname.includes('/services') ? 'active' : ''}`}>
-                <Link href="/services">services</Link>
-              </li>
-              <li className={`nav-item ${pathname.includes('/posts') ? 'active' : ''}`}>
-                <Link href="/posts">posts</Link>
-              </li>
-              <li className={`nav-item ${pathname.includes('/about') ? 'active' : ''}`}>
-                <Link href="/about">about</Link>
-              </li>
-              <li className={`nav-item ${pathname.includes('/contact') ? 'active' : ''}`}>
-                <Link href="/contact">contact</Link>
-              </li>
-            </ul>
-        </div>
-    </footer>   
-  )
-}
+  const menuItems = [
+    { name: "Products", path: "/products" },
+    { name: "Quotes", path: "/quotes" },
+    { name: "Services", path: "/services" },
+    { name: "Posts", path: "/posts" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
+  ];
 
-export default FooterBar
+  return (
+    <Box
+      component="footer"
+      sx={{
+        bgcolor: "background.paper",
+        p: 3,
+        textAlign: "center",
+        borderTop: "1px solid",
+        borderColor: "divider",
+      }}
+    >
+      <Typography variant="body2" color="textSecondary">
+        &copy; {new Date().getFullYear()} All rights reserved.
+      </Typography>
+      <Box sx={{ mt: 2, display: "flex", justifyContent: "center" }}>
+        {menuItems.map((item) => (
+          <Link key={item.name} href={item.path}>
+            <Typography
+              variant="body2"
+              color={
+                pathname.includes(item.path) ? "primary.main" : "textSecondary"
+              }
+              sx={{
+                textDecoration: pathname.includes(item.path)
+                  ? "underline"
+                  : "none",
+                textUnderlineOffset: "4px",
+                "&:hover": {
+                  textDecoration: "underline",
+                  color: "primary.main",
+                },
+                mx: 1,
+                cursor: "pointer",
+              }}
+            >
+              {item.name}
+            </Typography>
+          </Link>
+        ))}
+      </Box>
+    </Box>
+  );
+};
+
+export default FooterBar;

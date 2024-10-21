@@ -1,32 +1,78 @@
-import React from 'react'
-import Image from 'next/image';
-import styles from "./product-card.module.css"
-import { useRouter } from 'next/navigation';
+import React from "react";
+import { useRouter } from "next/navigation";
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  Button,
+  Box,
+} from "@mui/material";
 
-const ProductCard = ({product}) => {
-    const router = useRouter();
+const ProductCard = ({ product }) => {
+  const router = useRouter();
 
-    const handleCardClick = () => {
-      router.push(`/products/${product.id}`);
-    };
+  const handleCardClick = () => {
+    router.push(`/products/${product.id}`);
+  };
 
-    return (
-        <>
-            <div className={styles.productCard} onClick={handleCardClick}>
-                <Image
-                    src={product.thumbnail}
-                    alt={product.name || 'Product Image'}
-                    width={50}
-                    height={50}
-                    layout="responsive"
-                />
-                <h2 className={styles.productTitle}>{product.title}</h2>
-                <p className={styles.productDescription}>{product.description}</p>
-            </div>
-        </>
-            
-        
-    )
-}
+  return (
+    <Card
+      onClick={handleCardClick}
+      sx={{
+        cursor: "pointer",
+        maxWidth: 270,
+        transition: "0.3s",
+        marginBottom: 2,
+        "&:hover": { boxShadow: 3 },
+      }}
+      role="button"
+      tabIndex={0}
+      aria-label={`View details of ${product.title}`}
+    >
+      <CardMedia
+        component="img"
+        height="150"
+        image={product.thumbnail}
+        alt={product.name || "Product Image"}
+        sx={{ objectFit: "cover" }}
+      />
+      <CardContent>
+        <Typography
+          variant="h6"
+          component="h2"
+          gutterBottom
+          sx={{
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            maxWidth: "100%",
+          }}
+        >
+          {product.title}
+        </Typography>
+        <Typography variant="body2" color="textSecondary" height={"100px"}>
+          {product.description}
+        </Typography>
+      </CardContent>
+      <Box display="flex" justifyContent="flex-end" mt={2}>
+        <Button
+          onClick={handleCardClick}
+          size="small"
+          color="primary"
+          sx={{
+            marginRight: "10px",
+            marginBottom: "10px",
+            "&:hover": {
+              backgroundColor: "transparent",
+            },
+          }}
+        >
+          View Details
+        </Button>
+      </Box>
+    </Card>
+  );
+};
 
-export default ProductCard
+export default ProductCard;

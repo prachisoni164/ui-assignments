@@ -13,3 +13,8 @@ export const USER_ROUTES = {
     UPDATE_USER: '/users/',
     DELETE_USER: '/users/',
 }
+
+export const QUOTES_ROUTES = {
+    GET_ALL_QUOTES: '/quotes',
+    GET_QUOTE: '/quotes/',
+}

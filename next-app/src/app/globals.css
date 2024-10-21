@@ -18,8 +18,7 @@ body {
   height: 100%;
   color: var(--background);
   background: #fcfcfc;
-  font-family: 'Roboto', sans-serif; 
-  text-transform: lowercase;
+  font-family: "Roboto", sans-serif;
 }
 
 @layer utilities {
@@ -48,7 +47,24 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center;     
+  justify-content: center;
+  align-items: center;
   min-height: 81vh;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 5px;
+}
+
+.pagination .active {
+  font-weight: bold;
+  background-color: #0070f3;
+  color: white;
 }

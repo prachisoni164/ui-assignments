@@ -1,26 +1,51 @@
-import React, { useContext } from 'react'
-import '../../styles/services.styles.css'
-import { ServiceContext } from '../../context/service-context'
+import React, { useContext } from "react";
+import "../../styles/services.styles.css";
+import { ServiceContext } from "../../context/service-context";
 import Link from "next/link";
+import {
+  Box,
+  Typography,
+  Card,
+  CardContent,
+  CardActionArea,
+} from "@mui/material";
 
 const Services = () => {
+  const services = useContext(ServiceContext); // Access the services data from context
 
-    const services = useContext(ServiceContext) // Access the services data from context
+  return (
+    <Box height="75vh" width="75%" margin="auto" padding={2}>
+      <Typography variant="h4" sx={{ my: 3, textAlign: "center" }} gutterBottom>
+        Services
+      </Typography>
 
-    return (
-        <div className="full-container">
-            <h1>our services</h1>
-            <ul className="cardList">
-                {services.map(service => (
-                    <Link href={`/services/${service.id}`} key={service.id}>
-                        <li key={service.id} className="card pointer">
-                            <h2 className='text-bold'>{service.title}</h2>
-                            <p>{service.content}</p>
-                        </li>
-                    </Link>
-                ))}
-            </ul>
-    </div>
-)}
+      <Box display="grid" gap={2}>
+        {services.map((service) => (
+          <Link href={`/services/${service.id}`} key={service.id}>
+            <Card
+              component="a"
+              sx={{
+                cursor: "pointer",
+                transition: "0.3s",
+                "&:hover": { boxShadow: 4 },
+              }}
+            >
+              <CardActionArea>
+                <CardContent>
+                  <Typography variant="h6" component="h2" gutterBottom>
+                    {service.title}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    {service.content}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Link>
+        ))}
+      </Box>
+    </Box>
+  );
+};
 
-export default Services
+export default Services;
