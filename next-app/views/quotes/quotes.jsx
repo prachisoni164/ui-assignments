@@ -43,20 +43,33 @@ const Quotes = async () => {
     );
     quotes = response.data?.quotes || []; // Fallback to an empty array if quotes is undefined
   } catch (err) {
-    console.error("Error fetching quotes:", err);
     isError = true;
   }
 
   if (isError) {
     return (
-      <div className="full-container">
-        An error occurred while fetching quotes. Please try again later.
-      </div>
-    ); // Handle error state
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        height="75vh"
+      >
+        <Alert severity="error">Error fetching quotes.</Alert>
+      </Box>
+    );
   }
 
   if (!quotes || quotes.length === 0) {
-    return <div className="full-container">No quotes available.</div>;
+    return (
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        height="75vh"
+      >
+        <Typography variant="h6">No quotes available.</Typography>
+      </Box>
+    );
   }
 
   return (
