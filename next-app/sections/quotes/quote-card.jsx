@@ -38,7 +38,13 @@ const QuoteCard = ({ quote }) => {
           onClick={handleCardClick}
           size="small"
           color="primary"
-          sx={{ marginRight: "10px", marginBottom: "10px" }}
+          sx={{
+            marginRight: "10px",
+            marginBottom: "10px",
+            "&:hover": {
+              backgroundColor: "transparent",
+            },
+          }}
         >
           View Details
         </Button>
