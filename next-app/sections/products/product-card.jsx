@@ -8,7 +8,6 @@ import {
   Button,
   Box,
 } from "@mui/material";
-import PropTypes from "prop-types";
 
 const ProductCard = ({ product }) => {
   const router = useRouter();
@@ -60,7 +59,7 @@ const ProductCard = ({ product }) => {
           onClick={handleCardClick}
           size="small"
           color="primary"
-          sx={{ marginRight: "10px" }}
+          sx={{ marginRight: "10px", marginBottom: "10px" }}
         >
           View Details
         </Button>

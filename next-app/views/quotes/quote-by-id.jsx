@@ -1,13 +1,27 @@
-import React from 'react'
+import React from "react";
+import { Typography, Box } from "@mui/material";
 
 const QuoteById = ({ quote }) => {
-    
-    return (
-        <div className="full-container">
-            <h2>{quote.author}</h2>
-            <p>{quote.quote}</p>    
-        </div>
-    );
-}
+  return (
+    <Box
+      sx={{
+        padding: 2,
+        textAlign: "center",
+        height: "75vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Typography variant="h4" component="h2" gutterBottom>
+        {quote.author}
+      </Typography>
+      <Typography variant="body1" sx={{ fontStyle: "italic" }}>
+        {quote.quote}
+      </Typography>
+    </Box>
+  );
+};
 
 export default QuoteById;

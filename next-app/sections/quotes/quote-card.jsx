@@ -1,25 +1,50 @@
-"use client"
+"use client";
 
-import React from 'react'
-import styles from "./quote-card.module.css"
-import { useRouter } from 'next/navigation';
+import React from "react";
+import { Card, CardContent, Typography, Box, Button } from "@mui/material";
+import { useRouter } from "next/navigation";
 
-const QuoteCard = ({quote}) => {
+const QuoteCard = ({ quote }) => {
+  const router = useRouter();
 
-    const router = useRouter();
+  const handleCardClick = () => {
+    router.push(`/quotes/${quote.id}`);
+  };
 
-    const handleCardClick = () => {
-        router.push(`/quotes/${quote.id}`)
-    };
+  return (
+    <Card
+      onClick={handleCardClick}
+      sx={{
+        cursor: "pointer",
+        transition: "0.3s",
+        "&:hover": { boxShadow: 3 },
+        width: 250,
+        margin: 1,
+      }}
+      role="button"
+      tabIndex={0}
+      aria-label={`View quote by ${quote.author}`}
+    >
+      <CardContent>
+        <Typography variant="h6" component="h2" gutterBottom>
+          {quote.author}
+        </Typography>
+        <Typography variant="body2" sx={{ height: "70px" }}>
+          {quote.quote}
+        </Typography>
+      </CardContent>
+      <Box display="flex" justifyContent="flex-end" mt={2}>
+        <Button
+          onClick={handleCardClick}
+          size="small"
+          color="primary"
+          sx={{ marginRight: "10px", marginBottom: "10px" }}
+        >
+          View Details
+        </Button>
+      </Box>
+    </Card>
+  );
+};
 
-    return (
-        <>
-        <div className={styles.quoteCard} onClick={handleCardClick}>
-            <h2>{quote.author}</h2>
-            <p>{quote.quote}</p>
-        </div>
-        </>
-    )
-}
-
-export default QuoteCard
+export default QuoteCard;
