@@ -67,7 +67,7 @@ const Products = () => {
         flexWrap="wrap"
         gap={2}
         justifyContent="center"
-        sx={{ p: 2 }}
+        sx={{ p: 3 }}
       >
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />

@@ -18,7 +18,7 @@ const QuoteCard = ({ quote }) => {
         cursor: "pointer",
         transition: "0.3s",
         "&:hover": { boxShadow: 3 },
-        width: 250,
+        width: 280,
         margin: 1,
       }}
       role="button"
@@ -29,7 +29,11 @@ const QuoteCard = ({ quote }) => {
         <Typography variant="h6" component="h2" gutterBottom>
           {quote.author}
         </Typography>
-        <Typography variant="body2" sx={{ height: "70px" }}>
+        <Typography
+          variant="body2"
+          sx={{ height: "70px" }}
+          color="text.secondary"
+        >
           {quote.quote}
         </Typography>
       </CardContent>

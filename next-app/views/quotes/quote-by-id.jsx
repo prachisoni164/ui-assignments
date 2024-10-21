@@ -17,7 +17,11 @@ const QuoteById = ({ quote }) => {
       <Typography variant="h4" component="h2" gutterBottom>
         {quote.author}
       </Typography>
-      <Typography variant="body1" sx={{ fontStyle: "italic" }}>
+      <Typography
+        variant="body1"
+        sx={{ fontStyle: "italic" }}
+        color="text.secondary"
+      >
         {quote.quote}
       </Typography>
     </Box>

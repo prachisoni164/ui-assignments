@@ -66,10 +66,16 @@ const ProductById = ({ id }) => {
       {product ? (
         <Box
           display="flex"
-          flexDirection="row"
           alignItems="center"
           justifyContent="space-between"
           width="50%"
+          sx={{
+            flexDirection: {
+              xs: "column",
+              sm: "column",
+              md: "row",
+            },
+          }}
         >
           {/* Left Section: Image */}
           <Box>

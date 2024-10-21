@@ -21,8 +21,9 @@ const ProductCard = ({ product }) => {
       onClick={handleCardClick}
       sx={{
         cursor: "pointer",
-        maxWidth: 250,
+        maxWidth: 270,
         transition: "0.3s",
+        marginBottom: 2,
         "&:hover": { boxShadow: 3 },
       }}
       role="button"

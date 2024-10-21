@@ -17,7 +17,7 @@ const ServiceById = ({ id }) => {
       sx={{
         padding: 2,
         textAlign: "center",
-        height: "75vh",
+        minHeight: "75vh",
         width: "50%",
         margin: "auto",
         display: "flex",
