@@ -62,7 +62,13 @@ const Products = () => {
       <Typography variant="h4" sx={{ my: 3, textAlign: "center" }} gutterBottom>
         Our Products
       </Typography>
-      <Box display="flex" flexWrap="wrap" gap={2} justifyContent="center">
+      <Box
+        display="flex"
+        flexWrap="wrap"
+        gap={2}
+        justifyContent="center"
+        sx={{ p: 2 }}
+      >
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
