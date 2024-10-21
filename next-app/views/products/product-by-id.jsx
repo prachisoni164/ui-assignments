@@ -42,7 +42,14 @@ const ProductById = ({ id }) => {
 
   if (error) {
     return (
-      <Box className="full-container">
+      <Box
+        height={"75vh"}
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        sx={{ padding: 2 }}
+      >
         <Alert severity="error">{error}</Alert>
       </Box>
     );
