@@ -21,7 +21,7 @@ const Home = () => {
       sx={{
         textAlign: "center",
         p: 4,
-        height: "80vh",
+        height: "75vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
